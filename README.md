@@ -1,6 +1,6 @@
 Small project that shows that clang is incapable of unique (unlike weak!) symbols for template static variables.
 
-    $ make && nm -C libd.so | grep value && rm *.so
+    $ CXX=g++ make && nm -C libd.so | grep value && rm *.so
     0000000000201030 u TSingleton<BBB>::value   // gcc produces unique symbol
 
 But:
